@@ -1,3 +1,4 @@
+
 import socket
 import threading
 import sys
@@ -18,13 +19,9 @@ def receive_messages(sock):
             if not data:
                 break
 
-            sys.stdout.write('\r')
-            sys.stdout.flush()
-
             print(f"\n{data}")
 
-            sys.stdout.write(f"{BLUE}You: {RESET}")
-            sys.stdout.flush()
+            print(f"{BLUE}You: {RESET}", end="", flush=True)
 
         except:
             break
